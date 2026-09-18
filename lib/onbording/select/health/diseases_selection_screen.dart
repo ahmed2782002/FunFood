@@ -42,6 +42,7 @@ class _DiseasesSelectionScreenState extends State<DiseasesSelectionScreen> {
       DiseaseOption(key: 'Rickets', label: local.rickets),
       DiseaseOption(key: 'Diabetes', label: local.type2_diabetes),
       DiseaseOption(key: 'Stomach Bacteria', label: local.stomach_bacteria), // ✅ تمت الإضافة هنا
+      DiseaseOption(key: 'PCOS', label: local.pcos), // ✅ تكيسات المبايض
     ];
   }
 
@@ -58,74 +59,76 @@ class _DiseasesSelectionScreenState extends State<DiseasesSelectionScreen> {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const SizedBox(height: 32),
-              Text(
-                local.diseases_title,
-                style: const TextStyle(
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(height: 32),
+                Text(
+                  local.diseases_title,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Poppins',
+                  ),
+                ),
+                const SizedBox(height: 36),
+                ...group1.map((option) => _buildDiseaseButton(option)).toList(),
+                const SizedBox(height: 24),
+                Container(
+                  width: double.infinity,
+                  height: 1,
                   color: Colors.white,
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Poppins',
                 ),
-              ),
-              const SizedBox(height: 36),
-              ...group1.map((option) => _buildDiseaseButton(option)).toList(),
-              const SizedBox(height: 24),
-              Container(
-                width: double.infinity,
-                height: 1,
-                color: Colors.white,
-              ),
-              const SizedBox(height: 24),
-              ...group2.map((option) => _buildDiseaseButton(option)).toList(),
-              const Spacer(),
-              SizedBox(
-                width: double.infinity,
-                height: 48,
-                child: ElevatedButton(
-                  onPressed: () {
-                    if (selectedKey == null) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text(
-                            local.please_select_disease,
-                            style: const TextStyle(fontFamily: 'Poppins'),
+                const SizedBox(height: 24),
+                ...group2.map((option) => _buildDiseaseButton(option)).toList(),
+                const SizedBox(height: 36),
+                SizedBox(
+                  width: double.infinity,
+                  height: 48,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      if (selectedKey == null) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              local.please_select_disease,
+                              style: const TextStyle(fontFamily: 'Poppins'),
+                            ),
+                            backgroundColor: Colors.grey,
+                            behavior: SnackBarBehavior.floating,
                           ),
-                          backgroundColor: Colors.grey,
-                          behavior: SnackBarBehavior.floating,
-                        ),
-                      );
-                      return;
-                    }
+                        );
+                        return;
+                      }
 
-                    final provider = Provider.of<UserOnboardingProvider>(context, listen: false);
-                    provider.setSelectedDisease(selectedKey); // استخدم المفتاح
+                      final provider = Provider.of<UserOnboardingProvider>(context, listen: false);
+                      provider.setSelectedDisease(selectedKey); // استخدم المفتاح
 
-                    Navigator.pushNamed(context, 'height-selection');
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF1563FF),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
+                      Navigator.pushNamed(context, 'height-selection');
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF1563FF),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      elevation: 0,
                     ),
-                    elevation: 0,
-                  ),
-                  child: Text(
-                    local.continue_button,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Poppins',
+                    child: Text(
+                      local.continue_button,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Poppins',
+                      ),
                     ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 32),
-            ],
+                const SizedBox(height: 32),
+              ],
+            ),
           ),
         ),
       ),
