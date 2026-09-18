@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "45259877849",
+    "project_id": "funfood1-847c8",
+    "storage_bucket": "funfood1-847c8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:45259877849:android:ed1dc2ca34f915c426fdc8",
+        "android_client_info": {
+          "package_name": "com.example.funfood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "45259877849-b9fo6evlci353en7aut96268q830ofpj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.funfood",
+            "certificate_hash": "6db23ee27fa599949275f6d26ba65197b4442bcc"
+          }
+        },
+        {
+          "client_id": "45259877849-8gbkrc8sta3fn9ak946qfivcrkkunimm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDxl0Bw-YCOpHtm1nCEhK6i9KQLN4LiKA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "45259877849-8gbkrc8sta3fn9ak946qfivcrkkunimm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "45259877849-b16qf7p00icjp1s70u076lk3rs5knumh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.funfood"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:45259877849:android:95839e69e983d23d26fdc8",
+        "android_client_info": {
+          "package_name": "com.example.funfoodapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "45259877849-8gbkrc8sta3fn9ak946qfivcrkkunimm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDxl0Bw-YCOpHtm1nCEhK6i9KQLN4LiKA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "45259877849-8gbkrc8sta3fn9ak946qfivcrkkunimm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "45259877849-b16qf7p00icjp1s70u076lk3rs5knumh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.funfood"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
